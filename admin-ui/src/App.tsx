@@ -9,6 +9,26 @@ import { UserList } from "./user/UserList";
 import { UserCreate } from "./user/UserCreate";
 import { UserEdit } from "./user/UserEdit";
 import { UserShow } from "./user/UserShow";
+import { CustomerList } from "./customer/CustomerList";
+import { CustomerCreate } from "./customer/CustomerCreate";
+import { CustomerEdit } from "./customer/CustomerEdit";
+import { CustomerShow } from "./customer/CustomerShow";
+import { AddressList } from "./address/AddressList";
+import { AddressCreate } from "./address/AddressCreate";
+import { AddressEdit } from "./address/AddressEdit";
+import { AddressShow } from "./address/AddressShow";
+import { ProductList } from "./product/ProductList";
+import { ProductCreate } from "./product/ProductCreate";
+import { ProductEdit } from "./product/ProductEdit";
+import { ProductShow } from "./product/ProductShow";
+import { InvoiceList } from "./invoice/InvoiceList";
+import { InvoiceCreate } from "./invoice/InvoiceCreate";
+import { InvoiceEdit } from "./invoice/InvoiceEdit";
+import { InvoiceShow } from "./invoice/InvoiceShow";
+import { ItemList } from "./item/ItemList";
+import { ItemCreate } from "./item/ItemCreate";
+import { ItemEdit } from "./item/ItemEdit";
+import { ItemShow } from "./item/ItemShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -28,7 +48,7 @@ const App = (): React.ReactElement => {
   return (
     <div className="App">
       <Admin
-        title={"UserService"}
+        title={"Base"}
         dataProvider={dataProvider}
         authProvider={jwtAuthProvider}
         theme={theme}
@@ -41,6 +61,41 @@ const App = (): React.ReactElement => {
           edit={UserEdit}
           create={UserCreate}
           show={UserShow}
+        />
+        <Resource
+          name="Customer"
+          list={CustomerList}
+          edit={CustomerEdit}
+          create={CustomerCreate}
+          show={CustomerShow}
+        />
+        <Resource
+          name="Address"
+          list={AddressList}
+          edit={AddressEdit}
+          create={AddressCreate}
+          show={AddressShow}
+        />
+        <Resource
+          name="Product"
+          list={ProductList}
+          edit={ProductEdit}
+          create={ProductCreate}
+          show={ProductShow}
+        />
+        <Resource
+          name="Invoice"
+          list={InvoiceList}
+          edit={InvoiceEdit}
+          create={InvoiceCreate}
+          show={InvoiceShow}
+        />
+        <Resource
+          name="Item"
+          list={ItemList}
+          edit={ItemEdit}
+          create={ItemCreate}
+          show={ItemShow}
         />
       </Admin>
     </div>
